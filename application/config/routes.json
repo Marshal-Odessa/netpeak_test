@@ -1,0 +1,21 @@
+{
+	"": {
+		"controller":"page",
+		"action":"main"
+	},
+
+	"converter": {
+		"controller":"page",
+		"action":"converter"
+	},
+
+	"ajax\/convert\/[A-Z]{3}\/[A-Z]{3}": {
+		"controller":"calc",
+		"action":"convert"
+	},
+
+	"ajax\/clear\/history": {
+		"controller":"calc",
+		"action":"clearhistory"
+	}
+}

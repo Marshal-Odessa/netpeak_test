@@ -1,0 +1,70 @@
+<?php 
+	if (is_array($history) && count ($history) > 0) $vh = true;
+	else $vh = false;
+	if (is_array($config) && count($config) > 0) $vc = true;
+	else $vc = false;
+?>
+
+<div class="converter">
+	<div class="from">
+		<span class="label">
+			Меняю
+		</span>
+		<input type="number" id="currency_from_count" placeholder="0.00" />
+		<select id="currency_from">
+			<?php 
+			if ($vc == true)
+				foreach ($config as $code => $curr) { ?>
+				<option value="<?php echo $curr['code']; ?>"><?php echo $curr['code'].' - '.$curr['name']; ?></option>
+			<?php } ?>
+		</select>
+	</div>
+	<div class="to">
+		<span class="label">
+			Получаю
+		</span>
+		<input type="number" id="currency_to_count" placeholder="0.00" />
+		<select id="currency_to">
+			<?php 
+			if ($vc == true)
+				foreach ($config as $code => $curr) { ?>
+				<option value="<?php echo $curr['code']; ?>"><?php echo $curr['code'].' - '.$curr['name']; ?></option>
+			<?php } ?>
+		</select>
+	</div>
+</div>
+<div class="btn-group">
+	<a href="#convert">Конвертировать</a>
+	<a href="#clear">Очистить историю</a>
+</div>
+<h2 style="font-weight: 300">История</h2>
+<table <?php if (!$vh) { ?>style="display: none" <?php } ?>>
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Вход. валюта</td>
+			<td>Количество</td>
+			<td>Вых. валюта</td>
+			<td>Количество</td>
+			<td>Дата</td>
+		</tr>
+	</thead>
+	<tbody>
+		
+			<?php
+			if ($vh)
+				foreach ($history as $key => $value) { ?>
+				<tr>
+				<td><?php echo $value['id']; ?></td>
+				<td><?php echo $value['in_currency']; ?></td>
+				<td><?php echo $value['count']; ?></td>
+				<td><?php echo $value['out_currency']; ?></td>
+				<td><?php echo $value['result']; ?></td>
+				<td><?php echo $value['date']; ?></td>
+			</tr>
+			<?php } ?>
+	</tbody>
+</table>
+<?php if (!$vh) { ?>
+<h2 class="void_history">История работы с конвертером пуста...</h2>
+<?php } ?>

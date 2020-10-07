@@ -1,0 +1,22 @@
+{
+	"UAH":{
+		"name":"Гривна",
+		"code":"UAH",
+		"symbol":"грн"
+	},
+	"USD":{
+		"name":"Доллар",
+		"code":"USD",
+		"symbol":"$"
+	},
+	"EUR":{
+		"name":"Евро",
+		"code":"EUR",
+		"symbol":"€"
+	},
+	"RUR":{
+		"name":"Рубль",
+		"code":"RUR",
+		"symbol":"₽"
+	}
+}

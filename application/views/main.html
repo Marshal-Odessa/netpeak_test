@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php print(isset($controller['title']) ? $controller['title'] : ""); ?></title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+</head>
+<body>
+
+	<header>
+		<div class="wrap">
+			<div class="logo">
+				<b>currcalc</b>
+			</div>
+			<ul class="menu">
+				<li><a href="/"><span>Главная</span></a></li>
+				<li><a href="/converter"><span>Конвертер</span></a></li>
+				<li><a href="/about"><span>404</span></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+
+		<h1><?php print(isset($controller['header']) ? $controller['header'] : ""); ?></h1>
+
+		<article>
+			<?php print(isset($controller['content']) ? $controller['content'] : ""); ?>
+		</article>
+		
+	</main>
+
+	<footer>
+		
+	</footer>
+
+	<script src="/public/js/jquery.js"></script>
+	<script src="/public/js/converter.js"></script>
+</body>
+</html>
